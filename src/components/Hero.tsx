@@ -78,16 +78,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute right-[5%] top-[60%] w-[350px] -translate-y-1/2 max-[1024px]:right-[3%] max-[1024px]:w-[300px] max-[768px]:hidden">
-        <Image
-          src="/pic20.png"
-          alt="Isha Asif sticker"
-          width={421}
-          height={421}
-          priority
-          className="h-auto w-full"
-        />
-      </div>
+      {/* Image removed per request */}
     </section>
   );
 }
