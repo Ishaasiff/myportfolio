@@ -14,35 +14,21 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-hero-surface p-8 shadow-[inset_0_0_120px_rgba(156,57,77,0.10)] max-[600px]:p-4 max-[600px]:text-center"
+      className="relative flex min-h-screen flex-col items-center justify-center bg-hero p-8 shadow-[inset_0_0_100px_rgba(0,0,0,0.05)] max-[600px]:p-4 max-[600px]:text-center"
     >
-      {/* Decorative rose line-art, echoing the reference artwork */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[-7%] top-[3%] z-0 h-[440px] w-[440px] rounded-full border border-hero-rose/50 max-[1024px]:hidden"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[6%] top-[14%] z-0 h-[250px] w-[250px] rounded-full border border-hero-rose/40 max-[1024px]:hidden"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-[4%] left-[-9%] z-0 h-[320px] w-[320px] rounded-full border border-hero-rose/35 max-[1024px]:hidden"
-      />
-
-      <div className="relative z-10 flex w-full flex-col items-start py-[5vh] pl-[5vw] pr-[30vw] max-[600px]:items-center max-[600px]:justify-center max-[600px]:p-8 max-[600px]:text-center">
+      <div className="flex w-full flex-col items-start py-[5vh] pl-[5vw] pr-[30vw] max-[600px]:items-center max-[600px]:justify-center max-[600px]:p-8 max-[600px]:text-center">
         <div className="flex w-full flex-row items-center gap-8 max-[600px]:flex-col max-[600px]:justify-center max-[600px]:gap-4">
           <Reveal className="flex flex-col justify-center">
-            <p className="mb-[2vh] mt-[10vh] font-display text-[clamp(29px,7vw,46px)] font-bold leading-[1.4] text-hero-maroon max-[600px]:my-4 max-[600px]:text-center max-[600px]:text-[40px]">
+            <p className="mb-[2vh] mt-[10vh] font-display text-[clamp(29px,7vw,46px)] font-bold leading-[1.4] text-brand max-[600px]:my-4 max-[600px]:text-center max-[600px]:text-[40px]">
               {site.headline}{" "}
-              <span className="text-hero-rose-deep">| WEB DEVELOPER | DESIGNER</span>
+              <span className="text-brand-light">| WEB DEVELOPER | DESIGNER</span>
             </p>
           </Reveal>
         </div>
 
         <div>
           <Reveal>
-            <p className="mb-4 pr-[10vw] font-body text-[clamp(11px,2.2vw,18px)] leading-relaxed text-hero-ink max-[600px]:mx-auto max-[600px]:mb-4 max-[600px]:max-w-[90%] max-[600px]:p-0 max-[600px]:text-center max-[600px]:text-[20px]">
+            <p className="mb-4 pr-[10vw] font-body text-[clamp(11px,2.2vw,18px)] leading-relaxed text-ink max-[600px]:mx-auto max-[600px]:mb-4 max-[600px]:max-w-[90%] max-[600px]:p-0 max-[600px]:text-center max-[600px]:text-[20px]">
               I am a passionate Full Stack Developer skilled in building scalable web applications using modern
               front-end and back-end technologies.
             </p>
@@ -57,7 +43,7 @@ export function Hero() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={social.label}
-                  className="flex h-[60px] w-[60px] items-center justify-center rounded-full p-2 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_#d59298,0_0_20px_#9c394d] max-[500px]:h-[50px] max-[500px]:w-[50px] max-[500px]:p-1.5"
+                  className="flex h-[60px] w-[60px] items-center justify-center rounded-full p-2 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_#52ab98,0_0_20px_#2b6777] max-[500px]:h-[50px] max-[500px]:w-[50px] max-[500px]:p-1.5"
                 >
                   <Image
                     src={social.icon}
@@ -75,7 +61,7 @@ export function Hero() {
             <a
               href="/cv.pdf"
               download
-              className="relative mt-4 inline-block rounded-full border-2 border-hero-maroon bg-hero-maroon px-[clamp(20px,5vw,30px)] py-[clamp(12px,2.5vw,20px)] font-body text-[clamp(14px,1.5vw,16px)] text-white shadow-[0_4px_10px_#9c394d] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_#d59298,0_0_30px_#9c394d] max-[600px]:mx-auto max-[600px]:block max-[600px]:w-[30%] max-[600px]:max-w-[70%] max-[600px]:px-4 max-[600px]:py-[9px] max-[600px]:text-[13px]"
+              className="relative mt-4 inline-block rounded-full border-2 border-brand bg-brand-light px-[clamp(20px,5vw,30px)] py-[clamp(12px,2.5vw,20px)] font-body text-[clamp(14px,1.5vw,16px)] text-white shadow-[0_4px_10px_#2b6777] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_#52ab98,0_0_30px_#2b6777] max-[600px]:mx-auto max-[600px]:block max-[600px]:w-[30%] max-[600px]:max-w-[70%] max-[600px]:px-4 max-[600px]:py-[9px] max-[600px]:text-[13px]"
             >
               {downloadDots.map((position) => (
                 <span
@@ -92,7 +78,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute right-[5%] top-[60%] z-10 w-[350px] -translate-y-1/2 max-[1024px]:right-[3%] max-[1024px]:w-[300px] max-[768px]:hidden">
+      <div className="absolute right-[5%] top-[60%] w-[350px] -translate-y-1/2 max-[1024px]:right-[3%] max-[1024px]:w-[300px] max-[768px]:hidden">
         <Image
           src="/pic20.png"
           alt="Isha Asif sticker"

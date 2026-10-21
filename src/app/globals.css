@@ -9,6 +9,7 @@
   --color-brand: #2b6777;
   --color-brand-light: #52ab98;
   --color-brand-deep: #1f4d59;
+  --color-hero: #89fde5;
   --color-mint: #cffff5;
   --color-mint-soft: #e9fcf8;
   --color-contact: #82b8ac;
@@ -20,20 +21,6 @@
   --color-cv-orange: #e67e22;
   --color-cv-heading: #34495e;
   --color-cv-title: #2c3e50;
-
-  /* Hero palette — sampled from the reference artwork (warm cream / dusty rose) */
-  --color-hero: #fff0db;
-  --color-hero-blush: #f7dfd0;
-  --color-hero-rose: #d59298;
-  --color-hero-rose-deep: #bc727b;
-  --color-hero-maroon: #9c394d;
-  --color-hero-ink: #454634;
-
-  /* Layered blush/cream wash that mirrors the reference artwork */
-  --background-image-hero-surface:
-    radial-gradient(85% 42% at 50% 16%, #fff0db 0%, rgba(255, 240, 219, 0) 62%),
-    radial-gradient(78% 38% at 50% 60%, #fff0db 0%, rgba(255, 240, 219, 0) 60%),
-    linear-gradient(180deg, #eec9bd 0%, #f7dfd0 22%, #eecabd 48%, #f8e2d2 74%, #efd6c6 100%);
 }
 
 @layer base {
