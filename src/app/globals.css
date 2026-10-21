@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Palette (extracted from the original style.css) */
+  --color-brand: #2b6777;
+  --color-brand-light: #52ab98;
+  --color-brand-deep: #1f4d59;
+  --color-hero: #89fde5;
+  --color-mint: #cffff5;
+  --color-mint-soft: #e9fcf8;
+  --color-contact: #82b8ac;
+  --color-surface: #f4f6f6;
+  --color-ink: #262626;
+  --color-menu: #c8d8e4;
+  --color-divider: #9f9d9d;
+  --color-cv-green: #16a085;
+  --color-cv-orange: #e67e22;
+  --color-cv-heading: #34495e;
+  --color-cv-title: #2c3e50;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* keeps anchored sections clear of the fixed navbar */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-brand);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-light);
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  /* Scroll-reveal animation (was .reveal / .reveal.show in style.css) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Custom "html tag" cursor (desktop only, matches the original behaviour) */
+@media (min-width: 1025px) {
+  body {
+    cursor: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    cursor: auto;
+  }
+}
