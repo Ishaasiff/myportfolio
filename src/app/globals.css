@@ -5,17 +5,20 @@
   --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
 
-  /* Palette (extracted from the original style.css) */
-  --color-brand: #2b6777;
-  --color-brand-light: #52ab98;
-  --color-brand-deep: #1f4d59;
-  --color-hero: #89fde5;
+  /* Palette */
+  --color-brand: #0a080b;
+  --color-brand-light: #0a080b;
+  --color-brand-deep: #0a080b;
+  --color-hero: #ffd9ea;
+  --color-hero-text: #0a080b;
+  --color-button: #ffffff;
+  --color-navbar: #ffffff;
   --color-mint: #cffff5;
   --color-mint-soft: #e9fcf8;
   --color-contact: #82b8ac;
   --color-surface: #f4f6f6;
-  --color-ink: #262626;
-  --color-menu: #c8d8e4;
+  --color-ink: #0a080b;
+  --color-menu: #ffffff;
   --color-divider: #9f9d9d;
   --color-cv-green: #16a085;
   --color-cv-orange: #e67e22;
@@ -32,7 +35,7 @@
 
   body {
     background-color: #ffffff;
-    color: var(--color-brand);
+    color: var(--color-hero-text);
     font-family: var(--font-body);
     overflow-x: hidden;
   }

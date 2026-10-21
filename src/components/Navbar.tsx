@@ -59,16 +59,16 @@ export function Navbar() {
     <nav
       ref={navRef}
       id="navbar"
-      className="fixed left-0 top-0 z-[1000] w-full bg-brand shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-out"
+      className="fixed left-0 top-0 z-[1000] w-full bg-white shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-out"
       style={{ transform: hidden ? "translateY(-80px)" : "translateY(0)" }}
     >
       <div className="flex items-center justify-between px-8 py-4">
-        <div id="logo" className="font-display text-[1.8rem] font-bold text-brand-light">
+        <div id="logo" className="font-display text-[1.8rem] font-bold text-[color:var(--color-hero-text)]">
           {site.name}
         </div>
 
         <ul
-          className={`absolute right-0 top-[70px] z-[1000] w-[200px] flex-col gap-4 bg-menu p-4 shadow-[0_2px_5px_rgba(0,0,0,0.3)] md:static md:top-auto md:flex md:w-auto md:flex-row md:gap-8 md:bg-transparent md:p-0 md:shadow-none ${
+          className={`absolute right-0 top-[70px] z-[1000] w-[200px] flex-col gap-4 bg-white p-4 shadow-[0_2px_5px_rgba(0,0,0,0.3)] md:static md:top-auto md:flex md:w-auto md:flex-row md:gap-8 md:bg-transparent md:p-0 md:shadow-none ${
             menuOpen ? "flex" : "hidden"
           }`}
         >
@@ -81,10 +81,10 @@ export function Navbar() {
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   aria-current={isActive ? "page" : undefined}
-                  className={`block py-1 text-[1rem] font-medium transition-colors duration-300 hover:text-brand-light md:border-b-2 md:border-transparent ${
+                  className={`block py-1 text-[1rem] font-medium transition-colors duration-300 hover:opacity-70 md:border-b-2 md:border-transparent ${
                     isActive
-                      ? "text-brand md:border-brand-light md:text-brand-light"
-                      : "text-brand md:text-white"
+                      ? "text-[color:var(--color-hero-text)] md:border-[color:var(--color-hero-text)] md:text-[color:var(--color-hero-text)]"
+                      : "text-[color:var(--color-hero-text)] md:text-[color:var(--color-hero-text)]"
                   }`}
                 >
                   {link.label}
@@ -104,9 +104,9 @@ export function Navbar() {
           }}
           className="flex cursor-pointer flex-col gap-[5px] md:hidden"
         >
-          <span className="h-[3px] w-[25px] rounded-[2px] bg-white" />
-          <span className="h-[3px] w-[25px] rounded-[2px] bg-white" />
-          <span className="h-[3px] w-[25px] rounded-[2px] bg-white" />
+          <span className="h-[3px] w-[25px] rounded-[2px] bg-[color:var(--color-hero-text)]" />
+          <span className="h-[3px] w-[25px] rounded-[2px] bg-[color:var(--color-hero-text)]" />
+          <span className="h-[3px] w-[25px] rounded-[2px] bg-[color:var(--color-hero-text)]" />
         </button>
       </div>
     </nav>
