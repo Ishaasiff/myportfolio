@@ -5,25 +5,15 @@
   --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
 
-  /* Palette */
+  /* Palette: black surfaces, cream text, grey muted text, burgundy accents */
+  --color-cream: #ece8e1;
   --color-brand: #0a080b;
-  --color-brand-light: #0a080b;
-  --color-brand-deep: #0a080b;
-  --color-hero: #ffd9ea;
-  --color-hero-text: #0a080b;
-  --color-button: #ffffff;
-  --color-navbar: #ffffff;
-  --color-mint: #cffff5;
-  --color-mint-soft: #e9fcf8;
-  --color-contact: #82b8ac;
-  --color-surface: #f4f6f6;
-  --color-ink: #0a080b;
-  --color-menu: #ffffff;
-  --color-divider: #9f9d9d;
-  --color-cv-green: #16a085;
-  --color-cv-orange: #e67e22;
-  --color-cv-heading: #34495e;
-  --color-cv-title: #2c3e50;
+  --color-hero: #000000;
+  --color-navbar: #000000;
+  --color-menu: #000000;
+  --color-burgundy: #800020;
+  --color-burgundy-hover: #6d001b;
+  --color-muted: #A0A0A0;
 }
 
 @layer base {
@@ -34,8 +24,8 @@
   }
 
   body {
-    background-color: #ffffff;
-    color: var(--color-hero-text);
+    background-color: var(--color-hero);
+    color: var(--color-cream);
     font-family: var(--font-body);
     overflow-x: hidden;
   }
@@ -47,8 +37,8 @@
   }
 
   ::selection {
-    background-color: var(--color-brand-light);
-    color: #ffffff;
+    background-color: var(--color-burgundy);
+    color: var(--color-cream);
   }
 }
 
@@ -92,3 +82,13 @@
     cursor: auto;
   }
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+

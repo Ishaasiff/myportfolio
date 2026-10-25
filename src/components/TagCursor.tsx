@@ -43,7 +43,7 @@ export function TagCursor() {
     <div
       ref={cursorRef}
       aria-hidden="true"
-      className="pointer-events-none fixed left-0 top-0 z-[9999] hidden h-10 w-10 min-[1025px]:block"
+      className="pointer-events-none fixed left-0 top-0 z-[9999] hidden h-10 w-10 mix-blend-difference [filter:invert(1)] min-[1025px]:block"
       style={{
         backgroundImage: "url(/htmltag.png)",
         backgroundRepeat: "no-repeat",

@@ -1,7 +1,7 @@
 export const site = {
   name: "Isha Asif",
   role: "Software Engineering Student | Web Developer | Designer",
-  headline: "SOFTWARE ENGINEERING STUDENT",
+  headline: "Software Engineering Student",
   location: "Karachi, Pakistan",
   email: "ishaasif439@gmail.com",
   links: {

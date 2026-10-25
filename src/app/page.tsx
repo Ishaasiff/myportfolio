@@ -1,3 +1,4 @@
+import { SkillsMarquee } from "@/components/SkillsMarquee";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <SkillsMarquee />
         <About />
         <Services />
         <Projects />

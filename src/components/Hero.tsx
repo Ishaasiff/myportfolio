@@ -1,41 +1,47 @@
 import Image from "next/image";
+import avatarImage from "../../public/avatar-hero.png";
 import { Reveal } from "@/components/Reveal";
 import { site, socialLinks } from "@/data/site";
 
-const downloadDots = [
-  "left-[1vw] top-[40%] text-[clamp(12px,1.5vw,18px)]",
-  "left-[1.8vw] top-[50%] text-[clamp(10px,1.2vw,14px)]",
-  "left-[1.3vw] top-[63%] text-[clamp(12px,1.5vw,18px)]",
-  "right-[1.5vw] top-[40%] text-[clamp(14px,1.8vw,20px)]",
-  "right-[1.8vw] top-[60%] text-[clamp(10px,1.5vw,14px)]",
-];
+// Keep the headline data-driven but stack the last word on its own line:
+// "SOFTWARE ENGINEERING" / "STUDENT".
+const headlineWords = site.headline.split(" ");
+const headlineLastWord = headlineWords.pop() ?? "";
+const headlineLead = headlineWords.join(" ");
 
 export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center bg-hero p-8 shadow-[inset_0_0_100px_rgba(0,0,0,0.05)] max-[600px]:p-4 max-[600px]:text-center"
+      className="relative flex min-h-svh items-center bg-hero px-5 pb-4 pt-28 font-display text-left shadow-[inset_0_0_100px_rgba(255,255,255,0.06)] md:px-12"
     >
-      <div className="flex w-full flex-col items-start py-[5vh] pl-[5vw] pr-[30vw] max-[600px]:items-center max-[600px]:justify-center max-[600px]:p-8 max-[600px]:text-center">
-        <div className="flex w-full flex-row items-center gap-8 max-[600px]:flex-col max-[600px]:justify-center max-[600px]:gap-4">
-          <Reveal className="flex flex-col justify-center">
-            <p className="mb-[2vh] mt-[10vh] font-display text-[clamp(29px,7vw,46px)] font-bold leading-[1.4] text-[color:var(--color-hero-text)] max-[600px]:my-4 max-[600px]:text-center max-[600px]:text-[40px]">
-              {site.headline}{" "}
-              <span className="text-[color:var(--color-hero-text)]">| WEB DEVELOPER | DESIGNER</span>
-            </p>
-          </Reveal>
-        </div>
+      
+      {/* Thin neon divider: white fading ends, maroon centre */}
+      <div
+        aria-hidden="true"
+className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden h-[65%] w-px -translate-x-1/2 -translate-y-1/2 bg-[linear-gradient(to_bottom,transparent_0%,#ffffff_10%,rgba(255,255,255,0.85)_20%,#800020_38%,#800020_50%,#800020_62%,rgba(255,255,255,0.85)_80%,#ffffff_90%,transparent_100%)] shadow-[0_0_4px_rgba(255,255,255,0.35),0_0_10px_rgba(128,0,32,0.6),0_0_20px_rgba(128,0,32,0.3)] xl:block"      />
 
-        <div>
-          <Reveal>
-            <p className="mb-4 pr-[10vw] font-body text-[clamp(11px,2.2vw,18px)] leading-relaxed text-[color:var(--color-hero-text)] max-[600px]:mx-auto max-[600px]:mb-4 max-[600px]:max-w-[90%] max-[600px]:p-0 max-[600px]:text-center max-[600px]:text-[20px]">
+      <div className="relative z-10 grid w-full max-w-[1600px] grid-cols-1 items-center gap-16 lg:grid-cols-[minmax(0,760px)_minmax(0,1fr)]">
+        {/* Left column — all hero content */}
+        <div className="flex w-full -translate-y-8 flex-col items-start">
+          <Reveal
+            as="h1"
+            className="flex max-w-[760px] flex-col font-display text-3xl font-bold leading-[1.15] tracking-[-0.01em] md:text-[44px]"
+          >
+            <span className="text-cream">{headlineLead}</span>
+            <span className="text-cream">{headlineLastWord}</span>
+            <span className="whitespace-nowrap text-[color:var(--color-burgundy)]">| Web Developer |</span>
+          </Reveal>
+
+          <Reveal className="mt-5 w-full">
+            <p className="max-w-[540px] font-display text-base font-normal leading-[1.6] text-muted">
               I am a passionate Full Stack Developer skilled in building scalable web applications using modern
               front-end and back-end technologies.
             </p>
           </Reveal>
 
-          <Reveal delay={100}>
-            <div className="flex flex-wrap items-center justify-start max-[600px]:mt-4 max-[600px]:w-full max-[600px]:justify-center">
+          <Reveal delay={160} className="mt-6 flex flex-col items-start">
+            <div className="flex flex-wrap items-center gap-5">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -43,42 +49,38 @@ export function Hero() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={social.label}
-                  className="flex h-[60px] w-[60px] items-center justify-center rounded-full p-2 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(10,8,11,0.25)] max-[500px]:h-[50px] max-[500px]:w-[50px] max-[500px]:p-1.5"
+                  className="flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(128,0,32,0.6)]"
                 >
-                  <Image
-                    src={social.icon}
-                    alt={social.label}
-                    width={social.width}
-                    height={social.height}
-                    className="h-auto w-full"
-                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={social.icon} alt={social.label} className="h-auto w-full" />
                 </a>
               ))}
             </div>
-          </Reveal>
 
-          <Reveal delay={200}>
             <a
               href="/cv.pdf"
               download
-              className="relative mt-4 inline-block rounded-full border-2 border-transparent bg-white px-[clamp(20px,5vw,30px)] py-[clamp(12px,2.5vw,20px)] font-body text-[clamp(14px,1.5vw,16px)] text-[color:var(--color-hero-text)] shadow-[0_4px_10px_rgba(10,8,11,0.15)] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(255,255,255,0.9),0_0_30px_rgba(10,8,11,0.12)] max-[600px]:mx-auto max-[600px]:block max-[600px]:w-[30%] max-[600px]:max-w-[70%] max-[600px]:px-4 max-[600px]:py-[9px] max-[600px]:text-[13px]"
+              className="mt-6 inline-flex h-12 min-w-[220px] items-center justify-center rounded-none border-[2.5px] border-solid border-[#800020] bg-transparent px-12 font-display text-base font-semibold text-cream transition-colors duration-300 hover:bg-[rgba(128,0,32,0.45)]"
             >
-              {downloadDots.map((position) => (
-                <span
-                  key={position}
-                  aria-hidden="true"
-                  className={`absolute -translate-y-1/2 text-[color:var(--color-hero-text)] max-[600px]:hidden ${position}`}
-                >
-                  &bull;
-                </span>
-              ))}
               Download CV
             </a>
           </Reveal>
         </div>
-      </div>
 
-      {/* Image removed per request */}
+        {/* Right column — avatar */}
+        <div className="hidden items-center justify-center xl:flex">
+          <div className="relative w-full max-w-[400px] -translate-x-10 -translate-y-8 2xl:max-w-[440px]">
+            <Reveal delay={200} className="relative z-10">
+              <Image
+                src={avatarImage}
+                alt="Isha Asif"
+                priority
+                className="h-auto w-full drop-shadow-[0_0_40px_rgba(128,0,32,0.35)]"
+              />
+            </Reveal>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

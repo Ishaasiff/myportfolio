@@ -1,35 +1,44 @@
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/data/site";
+import { HelloLink } from "@/components/Hellolink";
 
 export function Contact() {
   return (
-    <section id="contact" className="relative min-h-[70vh] overflow-hidden bg-contact text-center">
-      <div className="flex flex-col items-center">
+    <section
+      id="contact"
+      className="relative flex min-h-screen flex-col justify-center gap-8 overflow-hidden bg-hero px-[5vw] py-[12vh]"
+    >
+      {/* Ambient burgundy glow low in the section */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-40 left-1/2 h-[420px] w-[900px] -translate-x-1/2 rounded-full bg-burgundy/20 blur-[160px]"
+      />
+
+      <div className="relative mx-auto grid w-full max-w-6xl gap-8 lg:grid-cols-2 lg:items-end lg:gap-16">
         <Reveal>
-          <h2 className="mb-8 pt-16 text-center font-display text-[clamp(28px,5vw,60px)] text-brand">
-            Get In Touch
+          <h2 className="font-display text-3xl font-bold leading-[1.15] tracking-[-0.01em] text-cream md:text-[44px]">
+            Get In <span className="text-burgundy">Touch</span>
           </h2>
+          <div
+            aria-hidden="true"
+            className="mt-5 h-[2px] w-24 rounded-[3px] bg-[linear-gradient(to_right,#800020,transparent)] shadow-[0_0_20px_rgba(128,0,32,0.55)]"
+          />
         </Reveal>
 
-        <Reveal delay={100}>
-          <p className="-mx-auto -mt-4 mb-12 max-w-[800px] px-4 pt-8 text-center font-body text-[clamp(11px,2.2vw,18px)] leading-relaxed text-brand">
-            Turning concepts into working solutions is what drives me. As a Software Engineering student, I&apos;m
-            eager to grow through internships, collaborations, and inspiring discussions. Let&apos;s team up and build
-            something that matters.
+        {/* <Reveal delay={100}>
+          <p className="max-w-[52ch] font-body text-base leading-relaxed text-muted">
+            Turning concepts into working solutions is what drives me. As a Software
+            Engineering student, I&apos;m eager to grow through internships, collaborations,
+            and inspiring discussions. Let&apos;s team up and build something that matters.
           </p>
-        </Reveal>
-
-        <Reveal delay={200}>
-          <a
-            href={site.links.gmailInbox}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="relative inline-block border-2 border-brand bg-brand-light px-[50px] py-5 font-body text-[clamp(14px,1.5vw,16px)] text-white shadow-[0_4px_10px_#2b6777] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_#52ab98,0_0_30px_#2b6777]"
-          >
-            Email me
-          </a>
-        </Reveal>
+        </Reveal> */}
       </div>
+
+      <Reveal delay={200}>
+        <div className="relative mx-auto w-full max-w-6xl border-t border-white/10 pt-6">
+          <HelloLink href={site.links.gmailInbox} />
+        </div>
+      </Reveal>
     </section>
   );
 }

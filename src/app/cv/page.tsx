@@ -33,18 +33,21 @@ const skills = [
 
 export default function CvPage() {
   return (
-    <main className="min-h-screen bg-[#f4f7fa] px-4 py-10 text-[#333] [font-family:var(--font-display)]">
-      <div className="mx-auto max-w-[900px] rounded-[15px] bg-white px-[30px] py-8 shadow-[0_6px_20px_rgba(0,0,0,0.1)]">
+    <main className="min-h-screen bg-hero px-4 py-10 text-muted [font-family:var(--font-display)]">
+      <div className="mx-auto max-w-[900px] rounded-[15px] border border-white/10 bg-brand px-[30px] py-8 shadow-[0_6px_20px_rgba(0,0,0,0.6)]">
         <header>
           <div className="mb-8 text-center">
-            <h1 className="text-[2.5rem] text-cv-title">Isha Asif</h1>
-            <p className="mt-2.5 text-[#555]">{site.location}</p>
-            <p className="mt-2.5 text-[#555]">
-              <a href={site.links.mailto} className="font-bold text-cv-green transition-colors duration-300 hover:text-cv-orange">
+            <h1 className="text-[2.5rem] text-cream">Isha Asif</h1>
+            <p className="mt-2.5 text-muted">{site.location}</p>
+            <p className="mt-2.5 text-muted">
+              <a
+                href={site.links.mailto}
+                className="font-bold text-cream underline decoration-[color:var(--color-burgundy)] decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-white"
+              >
                 {site.email}
               </a>
             </p>
-            <p className="mt-2.5 text-[#555]">
+            <p className="mt-2.5 text-muted">
               &quot;Passionate about turning ideas into interactive web experiences and building powerful backend
               systems.&quot;
             </p>
@@ -53,7 +56,7 @@ export default function CvPage() {
 
         <Reveal>
           <section className="mb-8">
-            <h3 className="mb-3 inline-block border-b-2 border-cv-green pb-[5px] text-cv-heading">Summary</h3>
+            <h3 className="mb-3 inline-block border-b-2 border-[color:var(--color-burgundy)] pb-[5px] text-cream">Summary</h3>
             <p>
               I am a dedicated Software Engineering student and Web Developer who enjoys crafting beautiful,
               functional, and user-friendly websites. I aim to contribute to innovative projects where technology
@@ -64,10 +67,10 @@ export default function CvPage() {
 
         <Reveal delay={100}>
           <section className="mb-8">
-            <h3 className="mb-3 inline-block border-b-2 border-cv-green pb-[5px] text-cv-heading">Education</h3>
+            <h3 className="mb-3 inline-block border-b-2 border-[color:var(--color-burgundy)] pb-[5px] text-cream">Education</h3>
             <ul className="ml-2.5 list-none">
               {education.map((entry) => (
-                <li key={entry.title} className="relative my-1.5 pl-5 before:absolute before:left-0 before:font-bold before:text-cv-green before:content-['•']">
+                <li key={entry.title} className="relative my-1.5 pl-5 before:absolute before:left-0 before:font-bold before:text-[color:var(--color-burgundy)] before:content-['•']">
                   <p>{entry.title}</p>
                   <p>{entry.institute}</p>
                   <p>{entry.period}</p>
@@ -79,10 +82,10 @@ export default function CvPage() {
 
         <Reveal delay={200}>
           <section className="mb-8">
-            <h3 className="mb-3 inline-block border-b-2 border-cv-green pb-[5px] text-cv-heading">Projects</h3>
+            <h3 className="mb-3 inline-block border-b-2 border-[color:var(--color-burgundy)] pb-[5px] text-cream">Projects</h3>
             <ul className="ml-2.5 list-none">
               {projectList.map((project) => (
-                <li key={project} className="relative my-1.5 pl-5 before:absolute before:left-0 before:font-bold before:text-cv-green before:content-['•']">
+                <li key={project} className="relative my-1.5 pl-5 before:absolute before:left-0 before:font-bold before:text-[color:var(--color-burgundy)] before:content-['•']">
                   {project}
                 </li>
               ))}
@@ -92,10 +95,10 @@ export default function CvPage() {
 
         <Reveal delay={300}>
           <section className="mb-8">
-            <h3 className="mb-3 inline-block border-b-2 border-cv-green pb-[5px] text-cv-heading">Skills</h3>
+            <h3 className="mb-3 inline-block border-b-2 border-[color:var(--color-burgundy)] pb-[5px] text-cream">Skills</h3>
             <ul className="ml-2.5 list-none">
               {skills.map((skill) => (
-                <li key={skill.label} className="relative my-1.5 pl-5 before:absolute before:left-0 before:font-bold before:text-cv-green before:content-['•']">
+                <li key={skill.label} className="relative my-1.5 pl-5 before:absolute before:left-0 before:font-bold before:text-[color:var(--color-burgundy)] before:content-['•']">
                   {skill.label}: {skill.value}
                 </li>
               ))}
@@ -106,14 +109,14 @@ export default function CvPage() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-sm">
           <Link
             href="/"
-            className="rounded-full border-2 border-brand bg-brand-light px-6 py-2 text-white transition-all duration-300 hover:scale-105"
+            className="rounded-full border-2 border-[color:var(--color-burgundy)] bg-[color:var(--color-burgundy)] px-6 py-2 text-cream transition-all duration-300 hover:scale-105 hover:bg-[color:var(--color-burgundy-hover)]"
           >
             &larr; Back to portfolio
           </Link>
           <a
             href="/cv.pdf"
             download
-            className="rounded-full border-2 border-brand bg-white px-6 py-2 text-brand transition-all duration-300 hover:scale-105"
+            className="rounded-full border-2 border-[color:var(--color-burgundy)] bg-transparent px-6 py-2 text-cream transition-all duration-300 hover:scale-105 hover:bg-[color:var(--color-burgundy)]"
           >
             Download PDF
           </a>
